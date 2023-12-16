@@ -4,8 +4,9 @@ import Astro from './Astro';
 import Day from './Day';
 import Hourly from './Hourly';
 const ForecastDay = ({ forecastObject }) => {
+  const [selectedTab, setSelectedTab] = React.useState('day');
   if(forecastObject){
-    const [selectedTab, setSelectedTab] = React.useState('day');
+    
     const datetimeString = forecastObject.date+' 00:00:00';
 const options = { weekday: 'short', month: 'numeric', day: 'numeric', year: '2-digit' };
 const formattedDate = new Date(datetimeString).toLocaleDateString('en-US', options);
