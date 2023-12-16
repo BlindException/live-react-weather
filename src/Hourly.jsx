@@ -2,6 +2,7 @@ import React from 'react';
 import ForecastHour from './ForecastHour';
 import {dateFormatter} from './DateFormatter';
 const Hourly= ({ forecastData}) => {
+    if(forecastData){
                
 return (
 <>
@@ -13,5 +14,6 @@ return (
 </div>
 </>
 );
+    }
 };
 export default Hourly;

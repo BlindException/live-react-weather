@@ -4,18 +4,13 @@ import Astro from './Astro';
 import Day from './Day';
 import Hourly from './Hourly';
 const ForecastDay = ({ forecastObject }) => {
+  if(forecastObject){
     const [selectedTab, setSelectedTab] = React.useState('day');
     const datetimeString = forecastObject.date+' 00:00:00';
 const options = { weekday: 'short', month: 'numeric', day: 'numeric', year: '2-digit' };
 const formattedDate = new Date(datetimeString).toLocaleDateString('en-US', options);
-   
-    if (!forecastObject) {
-   
-   
-    return <div>No forecast data available...</div>;
-   
-   
-    }
+  
+    
    
   
     return (
@@ -45,5 +40,13 @@ const formattedDate = new Date(datetimeString).toLocaleDateString('en-US', optio
             </div>
             </>
             );
+    }
+    if (!forecastObject) {
+   
+   
+      return <div>No forecast data available...</div>;
+     
+     
+      }
             };
             export default ForecastDay;

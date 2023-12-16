@@ -8,7 +8,7 @@ const Current = ({ searchValue }) => {
 
 React.useEffect(() => {
 
-
+if(searchValue){
 fetch(url + key + '&q=' + searchValue)
 
 
@@ -33,8 +33,7 @@ setData(data.current);
 
 
 });
-
-
+}
 }, [searchValue]);
 
 

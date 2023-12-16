@@ -1,6 +1,7 @@
 import React from 'react';
 import {moonSelector} from './MoonSelector';
 const Astro= ({ forecastData }) => {
+    
     const [data, setData] = React.useState(forecastData);
     React.useEffect(() => {
             if (forecastData) {

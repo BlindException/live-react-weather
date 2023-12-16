@@ -7,6 +7,7 @@ const Forecast = ({ searchValue }) => {
 const url = 'https://api.weatherapi.com/v1/forecast.json?days=7&key='+apiKey;
 const [data, setData] = React.useState(null);
 React.useEffect(() => {
+    if(searchValue{
     const fetchData = () => {
         fetch(url+ '&q=' + searchValue)
        
@@ -39,8 +40,8 @@ React.useEffect(() => {
        
        
         };
-       
-       
+      
+    }
         }, [searchValue]);
 if (!data) {
 

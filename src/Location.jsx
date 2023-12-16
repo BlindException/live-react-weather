@@ -6,6 +6,7 @@ const Location= ({ searchValue }) => {
     const key=process.env.REACT_APP_API_KEY;
         const [data, setData] = React.useState(null);
 React.useEffect(() => {
+    if(searchValue){
 fetch(url + key + '&q=' + searchValue)
 .then(response => response.json())
 .then(data => {
@@ -17,6 +18,7 @@ setData(data.location);
     // Handle the error here
             console.error('Error:', error);
             });
+        }
 }, [searchValue]);
 if (!data) {
 return <div>Loading...</div>;
