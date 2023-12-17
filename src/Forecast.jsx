@@ -58,12 +58,12 @@ return (
 <>
 
 
-<div>
+<div className='container'>
 
 
-<h3>Forecast:</h3>
+<h3 className='row'>Forecast:</h3>
 
-
+<div className='row'>
 {data.forecastday.map((forecast, index) => (
 
 
@@ -72,7 +72,7 @@ return (
 
 ))}
 
-
+</div>
 </div>
 
 
